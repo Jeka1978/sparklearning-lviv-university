@@ -16,7 +16,6 @@ public class WordServiceImpl implements WordService {
     @AutowiredBroadcast
     private Broadcast<UserConfig> userConfig;
 
-
     @Override
     public List<String> topX(JavaRDD<String> lines, int x) {
         return lines.map(String::toLowerCase)

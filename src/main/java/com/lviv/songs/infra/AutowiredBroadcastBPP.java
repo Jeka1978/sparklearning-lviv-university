@@ -33,7 +33,7 @@ public class AutowiredBroadcastBPP implements BeanPostProcessor {
                 Class<?> typeOfBeanToInject = (Class<?>) genericType.getActualTypeArguments()[0];
                 field.setAccessible(true);
                 Object beanToInject = context.getBean(typeOfBeanToInject);
-                field.set(bean,sc.broadcast(beanToInject));
+                field.set(bean, sc.broadcast(beanToInject));
             }
         }
         return bean;
