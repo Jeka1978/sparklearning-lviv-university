@@ -1,6 +1,6 @@
 package com.lviv.songs;
 
-import com.lviv.songs.infra.AutowiredBroadcast;
+import com.lviv.infra.AutowiredBroadcast;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.broadcast.Broadcast;
 import org.springframework.stereotype.Service;

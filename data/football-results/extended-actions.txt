@@ -1,0 +1,4 @@
+stadion=they;period=First period;code=2;eventTime=2:12;from=Artyom Dzyuba;startTime=21:39;to=Sami KhediraApri;actionDescription=red card;team=Russia;
+stadion=trying;period=First period;code=2;eventTime=13:3;from=Denys Harmash;startTime=12:37;to=Yevhen Seleznyo;actionDescription=red card;team=Ukraine;
+stadion=sill;period=Second Period;code=8;eventTime=76:49;from=Denys Harmash;startTime=2:31;to=Roman Shirokov;team=Ukraine;
+stadion=sill;period=First period;code=3;eventTime=44:49;from=Denys Harmash;startTime=3:31;to=Roman Shirokov;actionDescription=pass sent;team=Ukraine;

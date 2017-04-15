@@ -1,4 +1,4 @@
-package com.lviv.songs.infra;/**
+package com.lviv.infra;/**
  * Created by Evegeny on 11/03/2017.
  */
 
