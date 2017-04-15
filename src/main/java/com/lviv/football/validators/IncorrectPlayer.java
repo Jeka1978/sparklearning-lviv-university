@@ -7,10 +7,7 @@ import lombok.Getter;
 import org.apache.spark.broadcast.Broadcast;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.lviv.football.constants.Columns.from;
 import static com.lviv.football.constants.Columns.to;
@@ -37,7 +34,7 @@ public class IncorrectPlayer implements ActionValidator {
         names.put(action.getProperty(to), false);
 
         names.replaceAll((name, correctValue) -> {
-            if (name != null) {
+            if (!Objects.equals(name, "")) {
                 for (List<String> players : userConfig.value().teams.values()) {
                     if (players.indexOf(name) > -1) {
                         correctValue = true;

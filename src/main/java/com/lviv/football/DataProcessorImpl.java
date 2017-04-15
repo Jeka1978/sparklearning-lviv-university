@@ -1,6 +1,7 @@
 package com.lviv.football;
 
 import com.lviv.football.configs.UserConfig;
+import com.lviv.football.constants.Columns;
 import com.lviv.football.formaters.ActionFormatter;
 import com.lviv.football.validators.ActionValidator;
 import com.lviv.infra.AutowiredBroadcast;
@@ -13,6 +14,7 @@ import scala.Tuple2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by rudnitskih on 4/11/17.
@@ -48,7 +50,7 @@ public class DataProcessorImpl implements DataProcessor {
                     }
                 });
 
-                return new ActionInfo().addProperties(selectedProperties).addProperties(properties);
+                return new ActionInfo().addProperties(selectedProperties);
             })
             .map((action) -> {
                 validators.forEach(validator -> {
@@ -65,12 +67,31 @@ public class DataProcessorImpl implements DataProcessor {
 
     @Override
     public JavaRDD<ActionInfo> getExtendedData(JavaRDD<ActionInfo> actionsWithValidationIssuesRDD) {
-        return actionsWithValidationIssuesRDD
-            .filter((action) -> action.getValidationIssues().isEmpty())
-            .map((action) -> {
-                formatters.forEach(formatter -> {
-                    formatter.addAdditionalData(action);
-                });
+        JavaRDD<ActionInfo> validateActions = actionsWithValidationIssuesRDD
+            .filter((action) -> action.getValidationIssues().isEmpty());
+
+        JavaRDD<ActionInfo> additionalActions = validateActions
+            .map(action -> {
+                if (action.getProperty("code").equals("3")) {
+                    List<String> originalProperties = Arrays.asList(action.getProperties().split(";"));
+                    String fromName = action.getProperty(Columns.from);
+                    String toName = action.getProperty(Columns.to);
+
+                    return new ActionInfo()
+                        .addProperties(originalProperties)
+                        .addProperty(Columns.code + "=" + "4")
+                        .addProperty(Columns.from + "=" + toName)
+                        .addProperty(Columns.to + "=" + fromName);
+                } else {
+                    return null;
+                }
+            })
+            .filter(Objects::nonNull);
+
+        return validateActions
+            .union(additionalActions)
+            .map(action -> {
+                formatters.forEach(formatter -> formatter.addAdditionalData(action));
 
                 return action;
             });

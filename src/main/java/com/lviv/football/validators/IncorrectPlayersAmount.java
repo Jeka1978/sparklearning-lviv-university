@@ -8,6 +8,7 @@ import org.apache.spark.broadcast.Broadcast;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 import static com.lviv.football.constants.Columns.*;
 
@@ -35,13 +36,13 @@ public class IncorrectPlayersAmount implements ActionValidator {
 
         List<String> codesWithOneParticipant = userConfig.value().codesWithOneParticipant;
 
-        if (actionCode != null) {
+        if (!Objects.equals(actionCode, "")) {
             if (codesWithOneParticipant.contains(actionCode)) {
-                if (fromName != null && toName != null) {
+                if (!Objects.equals(fromName, "") && !Objects.equals(toName, "")) {
                     isCorrectAction = false;
                 }
             } else {
-                if (fromName == null || toName == null) {
+                if (Objects.equals(fromName, "") || Objects.equals(toName, "")) {
                     isCorrectAction = false;
                 }
             }

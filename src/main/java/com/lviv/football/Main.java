@@ -34,7 +34,7 @@ public class Main {
 
         printer.printActions(
             actionsWithValidationIssuesRDD,
-            10,
+            100,
             new String[]{
                 Columns.code,
                 Columns.from,
@@ -59,7 +59,7 @@ public class Main {
 
         printer.printActions(
             extendedData,
-            10,
+            100,
             new String[]{
                 Columns.code,
                 Columns.actionDescription,
