@@ -1,2 +1,3 @@
 code=3;amount=14;description=Player is not found
 code=2;amount=3;description=No correct list of players
+code=1;amount=2;description=Time is no correct
