@@ -30,4 +30,11 @@ public class FootballTeamsProperties implements Serializable {
         }
         return false;
     }
+
+    public String GetPlayerTeam(String name) {
+        for(FootballTeam team: teams) {
+            if(team.getPlayers().contains(name)) return team.getName();
+        }
+        return null;
+    }
 }

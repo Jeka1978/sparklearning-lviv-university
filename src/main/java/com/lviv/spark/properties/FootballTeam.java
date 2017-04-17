@@ -11,12 +11,12 @@ import java.util.List;
  */
 public class FootballTeam implements Serializable {
     @Getter
-    List<String> name;
+    String name;
     @Getter
     List<String> players;
 
     public FootballTeam(String name, String[] players) {
-        this.name = Arrays.asList(name);
+        this.name = name;
         this.players = Arrays.asList(players);
     }
 }
