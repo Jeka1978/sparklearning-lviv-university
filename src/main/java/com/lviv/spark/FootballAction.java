@@ -30,7 +30,7 @@ public class FootballAction implements Serializable {
     @Getter @Setter @CsvField
     String codeName;
     @Getter @Setter @CsvField
-    int timeNumber;
+    Integer timeNumber;
 
     @Getter @Setter
     List<String> validationErrors;
