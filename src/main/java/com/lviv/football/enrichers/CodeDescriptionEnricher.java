@@ -1,4 +1,4 @@
-package com.lviv.football.formaters;
+package com.lviv.football.enrichers;
 
 import com.lviv.football.ActionInfo;
 import com.lviv.football.configs.UserConfig;
@@ -13,7 +13,7 @@ import java.util.Map;
  * Created by rudnitskih on 4/15/17.
  */
 @Component
-public class CodeDescriptionFormatter implements ActionFormatter {
+public class CodeDescriptionEnricher implements DataEnricher {
     @AutowiredBroadcast
     Broadcast<UserConfig> userConfig;
 
@@ -23,7 +23,7 @@ public class CodeDescriptionFormatter implements ActionFormatter {
         String codeDescription;
 
         if (code != null) {
-            for (Map.Entry<String, String> codeEntry : userConfig.value().codes.entrySet()) {
+            for (Map.Entry<String, String> codeEntry : userConfig.value().getCodes().entrySet()) {
                 if (codeEntry.getKey().equals(code)) {
                     codeDescription = codeEntry.getValue();
 

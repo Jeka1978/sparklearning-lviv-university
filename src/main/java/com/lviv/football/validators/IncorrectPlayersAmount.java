@@ -34,7 +34,7 @@ public class IncorrectPlayersAmount implements ActionValidator {
 
         Boolean isCorrectAction = true;
 
-        List<String> codesWithOneParticipant = userConfig.value().codesWithOneParticipant;
+        List<String> codesWithOneParticipant = userConfig.value().getCodesWithOneParticipant();
 
         if (!Objects.equals(actionCode, "")) {
             if (codesWithOneParticipant.contains(actionCode)) {

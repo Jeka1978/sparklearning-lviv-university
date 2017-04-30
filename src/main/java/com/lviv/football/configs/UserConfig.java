@@ -1,5 +1,6 @@
 package com.lviv.football.configs;
 
+import lombok.Getter;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -14,14 +15,18 @@ import java.util.*;
  */
 @Component
 public class UserConfig implements Serializable {
-    public List<String> columnNames;
-    public Map<String, String> codes;
-    public Map<String, List<String>> teams = new HashMap<>();
-    public List<String> codesWithOneParticipant = Arrays.asList("6", "10");
+    @Getter
+    private List<String> columnNames;
 
-    /*
-     *
-     */
+    @Getter
+    private Map<String, String> codes;
+
+    @Getter
+    private Map<String, List<String>> teams = new HashMap<>();
+
+    @Getter
+    private List<String> codesWithOneParticipant = Arrays.asList("6", "10");
+
     @Value("${columnNames}")
     private void setColumnNames(String[] columnNames) {
         this.columnNames = Arrays.asList(columnNames);

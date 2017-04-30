@@ -51,9 +51,7 @@ public class FileSaver implements Saver {
         PrintWriter writer = new PrintWriter(resultsDirectory + "extended-actions.txt", "UTF-8");
 
         extendedData
-            .forEach(action -> {
-                writer.println(action.getProperties());
-            });
+            .forEach(action -> writer.println(action.getProperties()));
 
         writer.close();
     }

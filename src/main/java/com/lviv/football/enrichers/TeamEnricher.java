@@ -1,4 +1,4 @@
-package com.lviv.football.formaters;
+package com.lviv.football.enrichers;
 
 import com.lviv.football.ActionInfo;
 import com.lviv.football.configs.UserConfig;
@@ -15,7 +15,7 @@ import static com.lviv.football.constants.Columns.from;
  * Created by rudnitskih on 4/15/17.
  */
 @Component
-public class TeamFormatter implements ActionFormatter {
+public class TeamEnricher implements DataEnricher {
     @AutowiredBroadcast
     Broadcast<UserConfig> userConfig;
 
@@ -24,7 +24,7 @@ public class TeamFormatter implements ActionFormatter {
         String fromName = action.getProperty(from);
 
         if (fromName != null) {
-            for (Map.Entry<String, List<String>> entry : userConfig.value().teams.entrySet()) {
+            for (Map.Entry<String, List<String>> entry : userConfig.value().getTeams().entrySet()) {
                 String team = entry.getKey();
                 List<String> players = entry.getValue();
 

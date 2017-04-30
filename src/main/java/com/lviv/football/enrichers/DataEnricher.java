@@ -1,4 +1,4 @@
-package com.lviv.football.formaters;
+package com.lviv.football.enrichers;
 
 import com.lviv.football.ActionInfo;
 
@@ -7,6 +7,6 @@ import java.io.Serializable;
 /**
  * Created by rudnitskih on 4/15/17.
  */
-public interface ActionFormatter extends Serializable {
+public interface DataEnricher extends Serializable {
     ActionInfo addAdditionalData(ActionInfo action);
 }

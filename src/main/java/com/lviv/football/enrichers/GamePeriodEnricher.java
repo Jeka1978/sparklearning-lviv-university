@@ -1,4 +1,4 @@
-package com.lviv.football.formaters;
+package com.lviv.football.enrichers;
 
 import com.lviv.football.ActionInfo;
 import com.lviv.football.constants.Columns;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by rudnitskih on 4/15/17.
  */
 @Component
-public class GamePeriodFromatter implements ActionFormatter {
+public class GamePeriodEnricher implements DataEnricher {
     @Override
     public ActionInfo addAdditionalData(ActionInfo action) {
         String eventTime = action.getProperty(Columns.eventTime);

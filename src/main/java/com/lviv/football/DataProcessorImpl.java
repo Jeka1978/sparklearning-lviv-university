@@ -2,7 +2,7 @@ package com.lviv.football;
 
 import com.lviv.football.configs.UserConfig;
 import com.lviv.football.constants.Columns;
-import com.lviv.football.formaters.ActionFormatter;
+import com.lviv.football.enrichers.DataEnricher;
 import com.lviv.football.validators.ActionValidator;
 import com.lviv.infra.AutowiredBroadcast;
 import org.apache.spark.api.java.JavaRDD;
@@ -34,7 +34,7 @@ public class DataProcessorImpl implements DataProcessor {
     private List<ActionValidator> validators;
 
     @Autowired
-    private List<ActionFormatter> formatters;
+    private List<DataEnricher> enrichers;
 
     @Override
     public JavaRDD<ActionInfo> getActionsWithValidationIssues(JavaRDD<String> originalRdd) {
@@ -45,7 +45,7 @@ public class DataProcessorImpl implements DataProcessor {
                 List<String> selectedProperties = new ArrayList<>();
 
                 properties.forEach(property -> {
-                    if (userConfig.value().columnNames.contains(property.split("=")[0])) {
+                    if (userConfig.value().getColumnNames().contains(property.split("=")[0])) {
                         selectedProperties.add(property);
                     }
                 });
@@ -91,7 +91,7 @@ public class DataProcessorImpl implements DataProcessor {
         return validateActions
             .union(additionalActions)
             .map(action -> {
-                formatters.forEach(formatter -> formatter.addAdditionalData(action));
+                enrichers.forEach(enricher -> enricher.addAdditionalData(action));
 
                 return action;
             });

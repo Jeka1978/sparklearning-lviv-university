@@ -35,7 +35,7 @@ public class IncorrectPlayer implements ActionValidator {
 
         names.replaceAll((name, correctValue) -> {
             if (!Objects.equals(name, "")) {
-                for (List<String> players : userConfig.value().teams.values()) {
+                for (List<String> players : userConfig.value().getTeams().values()) {
                     if (players.indexOf(name) > -1) {
                         correctValue = true;
                         break;

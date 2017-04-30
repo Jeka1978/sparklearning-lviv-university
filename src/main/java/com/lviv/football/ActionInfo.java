@@ -21,11 +21,13 @@ public class ActionInfo implements Serializable {
     @AutowiredBroadcast
     private Broadcast<UserConfig> userConfig;
 
-    public void addValidationIssue(String newValidationIssue) {
+    public ActionInfo addValidationIssue(String newValidationIssue) {
         validationIssues.add(newValidationIssue);
         String property = Columns.validationIssues + "=" + StringUtils.join(getValidationIssues(), "; ");
 
         addProperty(property);
+
+        return this;
     }
 
     public ActionInfo addProperties(List<String> stringProperties) {
