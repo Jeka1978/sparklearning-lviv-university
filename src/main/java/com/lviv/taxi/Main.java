@@ -42,7 +42,5 @@ public class Main {
         trips.foreach(trip -> total[0]++);
 
         System.out.println("bostonTotal = " + bostonTotal);
-
-
     }
 }

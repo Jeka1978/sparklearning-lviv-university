@@ -1,0 +1,3 @@
+TimeInvalid: 2
+PlayerNameInvalid: 4
+GameCodeInvalid: 5
