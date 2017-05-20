@@ -47,7 +47,8 @@ code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
-code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
+code=3;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=pass sent;timeNumber=2;
+code=4;from=Igor Akinfeev;to=Emre Can;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Germany;codeName=pass received;timeNumber=2;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;teamName=Russia;codeName=kick to gate;timeNumber=2;

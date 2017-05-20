@@ -3,8 +3,6 @@ package com.lviv.spark.enrichment;
 import com.lviv.songs.infra.AutowiredBroadcast;
 import com.lviv.spark.FootballAction;
 import com.lviv.spark.properties.FootballCodesProperties;
-import com.lviv.spark.properties.FootballTeamsProperties;
-import com.lviv.spark.utils.StringUtils;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.broadcast.Broadcast;
 import org.springframework.stereotype.Component;

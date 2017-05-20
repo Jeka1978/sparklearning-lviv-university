@@ -15,9 +15,9 @@ import java.io.Serializable;
  */
 @Component
 public class PlayerTeamAction implements DataEnrichmentAction,Serializable {
-
     @AutowiredBroadcast
     private Broadcast<FootballTeamsProperties> teamsProperties;
+
     @Override
     public JavaRDD<FootballAction> execute(JavaRDD<FootballAction> rdd) {
         return rdd.map(action -> {

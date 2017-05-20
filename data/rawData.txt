@@ -54,7 +54,7 @@ code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
-code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
+code=3;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;
 code=6;from=Emre Can;to=Igor Akinfeev;eventTime=67:42;stadion=shepherd;startTime=5:20;

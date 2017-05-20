@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Anatoliy on 14.04.2017.
  */
-public class FootballAction implements Serializable {
+public class FootballAction implements Serializable, Cloneable {
     @Getter @Setter @CsvField
     int code;
     @Getter @Setter @CsvField
@@ -36,5 +36,9 @@ public class FootballAction implements Serializable {
     List<String> validationErrors;
     public FootballAction() {
         validationErrors = new ArrayList<>();
+    }
+
+    public FootballAction publicClone() throws CloneNotSupportedException {
+        return (FootballAction)this.clone();
     }
 }
